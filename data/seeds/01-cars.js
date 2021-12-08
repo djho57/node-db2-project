@@ -22,3 +22,8 @@ const cars = [
         mileage: 31000,
     },
 ]
+
+exports.seed = async function (knex) {
+    await knex('cars').truncate()
+    await knex('cars').insert(cars)
+}
